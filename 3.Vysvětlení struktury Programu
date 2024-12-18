@@ -1,1 +1,20 @@
+Program začína ve smyčce1 jmenem MENU kde se vybere postava číslem. Číslo se zapíše do proměné (po_class). Číslo zastupujíci tuto proměnou je pak viužito ve
+smyčce2 která sloužý jako Hlavní kde se hra rozdělí na dvě hry. Hra pro po_class = 1 a druha pro po_class = 2 podle to ho se vybere hra. Hry jsou stejné jenom se lišej statatami které jso
+na začatku hry napsány v def pro obě classy s proměnemy sil(poškození) a vyd(životy) pro 1 je to sil = 40 a vyd 100 , 2 je sil 20 a 200. Kolem tohodle se točí boj
+jak se to počíta v boji no nejdřív vysvětlim boj samotný.
 
+obě postavi hrají proti sobě a hrají naráz. Každí kolo si vyberety utok či blok podle toho se přesunute do jineho IFu a začne program do sazovat do nových promeních pro poškození
+jmenem POS(hrač) a DMG(Nepřítel) tady je využité nahodné vybírání random z knihovny random a beresi informace z def pro classu a nepřítele který má také svuj def s proměními ed,med(minimalní a maxilmalní poškození),
+ehp,mehp(minimalní a maximalní životy) pro nepřítele. Ve chvíly co je pro Hrače vybráno random číslo pro poškození a pro nepřítele životy a poškození se zpustí 1 kolo a vyskočí tabulka s informacemi
+pro hrače přesněji ,,Je ho původní vydrž,,Je ho nová vydrz potom co dostal poškození od nepřítele,,Poškození hrače proti nepřítely,,Původní životy nepřítele,,životy po hračově poškození,,poškození nepřítel,,
+mezi touhle tabulkou jsou dvě rovnice které to počítaj a z vysleků se to píše do už popsaný tabulky. Pak hráč vybirá další akci. A takhle to pokračuje dál do doby než někomu nepadnou životy na nulu.
+Jeli to hrač kdo prohraje hraje se znovu od 1 souboje z jakýkoli částy hry. Po výhře hráč dostane bod co je proměná pro rovnici statů a soubojů za každou výhru hráč obdrží bod. Bod je i v def postavy a navíší mu to
+rovnicí jeho staty i staty nepřítele. Pak se znovu spustí while true a vyhledáva souboj 2 který vyhledá jako IF bod = 1. Takhle se to opakuje do 4 souboje kterým to pak končí program.
+takhle se dá nej rychleji vysvětlit jak to asi funguje ale je těžko všechno popsat do podrobna jak protože je toho skoro 1000 řadku i když jeto hodně kopírovaní tak se si myslim že toto je jednoduše vysvětlené
+
+Souboj 4: Chci ještě napsat o souboji 4 který je trochu překopaní tím že je tam přidaná nová akce Omráčení a po ní pak nepřítel nemůže hrát na jedno kolo a akce se nedá znovu použít a bude aktivní až po
+4 kolech po použití. Je to víc složití protože v teto akci se spustí souboj ale funguje jinak protože tam jsou nové proměné doba a trefa(trefa je vybírána random IF trefa = 1 omračení neplatí) a S = 0,1,2
+doba je promená která slouží jako časovač kdy se může použit Omračujíci akce znova a S je značejí jestli omráčení nepřítele platí nebo ne (S = 0 je když hrač ne použije akciOmráčení a program je napsaný tak že
+ S se něčemů musí rovnat jinak hra nefunguje potom spustí normální kolo a omráčení bude znovu v nabítce),(S = 1 je když hrač se trefí a nepřítel na jedno kolo nehraje a IF S = 1 spustí už známí souboj který je poupravený kde nepřitely byl odebráno poškození a 
+po skončení se přičte doba +1 a S se promění na S = 2 protože už nepřítel nebude omračen další kolo),
+(S = 2 je prakticky stejné jako S = 0 z rozdílem takovým že tady je po skončení kola rovnice doba kde k době je přičteno + 1 každé kolo a až se bude rovnot 4 IF doba = 4 tak se doba dá na 0 a S na S = 0)
