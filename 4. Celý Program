@@ -117,7 +117,7 @@ while True:
                         break
                     if vyd <= 0:
                         print("Prohra")
-                        print(vyd())
+                        print(vyd)
                         kolo = 1
                         break
                     if vyd and nepritel <= 0:
@@ -202,7 +202,7 @@ while True:
                         break
                     if vyd <= 0:
                         print("Prohra")
-                        print(vyd())
+                        print(vyd)
                         kolo = 1
                         break
                     if vyd and nepritel <= 0:
@@ -290,7 +290,7 @@ while True:
                         break
                     if vyd <= 0:
                         print("Prohra")
-                        print(vyd())
+                        print(vyd)
                         kolo = 1
                         break
                     if vyd and nepritel <= 0:
@@ -303,6 +303,7 @@ while True:
             nepritel = random.randrange(ehp , mehp)
             while True:
                 if doba == 0:
+                    S = 0
                     print("Kolo", kolo)
                     print("1 = Utok")
                     print("2 = blok")
@@ -330,7 +331,7 @@ while True:
                         print(prehled)
                         kolo = kolo + 1
                         doba = doba + 1
-                        S = 0
+                        S = 2
                         if doba == 4:
                             doba = 0
                         if nepritel <= 0:
@@ -406,8 +407,6 @@ while True:
                         print("Enemy dmg: ""(", dmg, ")")
                         print(prehled)
                         kolo = kolo + 1
-                        if doba == 4:
-                            doba = 0
                         if nepritel <= 0:
                             print("GG")
                             print(nepritel)
@@ -426,42 +425,119 @@ while True:
                             break
 
                 elif akce == "2":
-                    pos = random.randrange(sil - 30, sil)
-                    blok = random.randrange(1 , 2)
-                    if blok == 1:
-                        procento = 30
-                    if blok == 2:
-                        procento = 50
-                    print(prehled)
-                    print("*** Moje vydrz: ""(", vyd, ")")
-                    print(prehled)
-                    print("Muj dmg: ""(", dmg / 100 * 40, ")")
-                    print(prehled)
-                    print("Enemy puvodni vydrz: ""(", nepritel, ")")
-                    nepritel = nepritel - pos / 100 * 40
-                    print(prehled)
-                    print("*** Enemy vydrz: ""(", nepritel, ")")
-                    print(prehled)
-                    kolo = kolo + 1
-                    doba = doba + 1
-                    if doba == 4:
-                        doba = 0
-                    if nepritel <= 0:
-                        print("GG")
-                        print(nepritel)
-                        bod = bod + 1
-                        kolo = 1
-                        break
-                    if vyd <= 0:
-                        print("Prohra")
-                        print(vyd())
-                        kolo = 1
-                        break
-                    if vyd and nepritel <= 0:
-                        print("Remíza")
-                        bod = 0
-                        kolo = 1
-                        break
+                    if S == 1:
+                        pos = random.randrange(sil - 30, sil)
+                        blok = random.randrange(1, 2)
+                        if blok == 1:
+                            procento = 30
+                        if blok == 2:
+                            procento = 50
+                        print(prehled)
+                        print("*** Moje vydrz: ""(", vyd, ")")
+                        print(prehled)
+                        print("Muj dmg: ""(", dmg / 100 * 40, ")")
+                        print(prehled)
+                        print("Enemy puvodni vydrz: ""(", nepritel, ")")
+                        nepritel = nepritel - pos / 100 * 40
+                        print(prehled)
+                        print("*** Enemy vydrz: ""(", nepritel, ")")
+                        print(prehled)
+                        S = 2
+                        kolo = kolo + 1
+                        doba = doba + 1
+                        if doba == 4:
+                            doba = 0
+                        if nepritel <= 0:
+                            print("GG")
+                            print(nepritel)
+                            bod = bod + 1
+                            kolo = 1
+                            break
+                        if vyd <= 0:
+                            print("Prohra")
+                            print(vyd)
+                            kolo = 1
+                            break
+                        if vyd and nepritel <= 0:
+                            print("Remíza")
+                            bod = 0
+                            kolo = 1
+                            break
+                    elif S == 2:
+                        pos = random.randrange(sil - 30, sil)
+                        blok = random.randrange(1, 2)
+                        dmg = random.randrange(ed, med)
+                        if blok == 1:
+                            procento = 30
+                        if blok == 2:
+                            procento = 50
+                        print(prehled)
+                        print("*** Moje vydrz: ""(", vyd, ")")
+                        print(prehled)
+                        vyd = vyd - dmg
+                        print("Muj dmg: ""(", dmg / 100 * 40, ")")
+                        print(prehled)
+                        print("Enemy puvodni vydrz: ""(", nepritel, ")")
+                        nepritel = nepritel - pos / 100 * 40
+                        print(prehled)
+                        print("*** Enemy vydrz: ""(", nepritel, ")")
+                        print(prehled)
+                        kolo = kolo + 1
+                        doba = doba + 1
+                        if doba == 4:
+                            doba = 0
+                        if nepritel <= 0:
+                            print("GG")
+                            print(nepritel)
+                            bod = bod + 1
+                            kolo = 1
+                            break
+                        if vyd <= 0:
+                            print("Prohra")
+                            print(vyd)
+                            kolo = 1
+                            break
+                        if vyd and nepritel <= 0:
+                            print("Remíza")
+                            bod = 0
+                            kolo = 1
+                            break
+                    else:
+                        pos = random.randrange(sil - 30, sil)
+                        blok = random.randrange(1 , 2)
+                        dmg = random.randrange(ed, med)
+                        if blok == 1:
+                            procento = 30
+                        if blok == 2:
+                            procento = 50
+                        print(prehled)
+                        print("*** Moje vydrz: ""(", vyd, ")")
+                        vyd = vyd - dmg
+                        print(prehled)
+                        print("Muj dmg: ""(", dmg / 100 * 40, ")")
+                        print(prehled)
+                        print("Enemy puvodni vydrz: ""(", nepritel, ")")
+                        nepritel = nepritel - pos / 100 * 40
+                        print(prehled)
+                        print("*** Enemy vydrz: ""(", nepritel, ")")
+                        print(prehled)
+                        kolo = kolo + 1
+                        if nepritel <= 0:
+                            print("GG")
+                            print(nepritel)
+                            bod = bod + 1
+                            kolo = 1
+                            break
+                        if vyd <= 0:
+                            print("Prohra")
+                            print(vyd)
+                            kolo = 1
+                            break
+                        if vyd and nepritel <= 0:
+                            print("Remíza")
+                            bod = 0
+                            kolo = 1
+                            break
                 elif akce == "3":
                     doba = 0
                     trefa = random.randrange(1 , 10)
@@ -512,7 +588,7 @@ while True:
                 print("2 = blok")
                 akce = input("vyber akci: ")
                 if akce == "1":
-                    pos = random.randrange(sil - 30, sil)
+                    pos = random.randrange(sil - 10, sil)
                     dmg = random.randrange(ed, med)
                     print(prehled)
                     print("Moje puvodni vydrz: ""(", vyd, ")")
@@ -548,7 +624,7 @@ while True:
                         kolo = 1
                         break
                 elif akce == "2":
-                    pos = random.randrange(sil - 30, sil)
+                    pos = random.randrange(sil - 10, sil)
                     dmg = random.randrange(ed, med)
                     blok = random.randrange(1, 2)
                     if blok == 1:
@@ -580,7 +656,7 @@ while True:
                         break
                     if vyd <= 0:
                         print("Prohra")
-                        print(vyd())
+                        print(vyd)
                         kolo = 1
                         break
                     if vyd and nepritel <= 0:
@@ -597,7 +673,7 @@ while True:
                 print("2 = blok")
                 akce = input("vyber akci: ")
                 if akce == "1":
-                    pos = random.randrange(sil - 30, sil)
+                    pos = random.randrange(sil - 10, sil)
                     dmg = random.randrange(ed, med)
                     print(prehled)
                     print("Moje puvodni vydrz: ""(", vyd, ")")
@@ -633,7 +709,7 @@ while True:
                         kolo = 1
                         break
                 elif akce == "2":
-                    pos = random.randrange(sil - 30, sil)
+                    pos = random.randrange(sil - 10, sil)
                     dmg = random.randrange(ed, med)
                     blok = random.randrange(1, 2)
                     if blok == 1:
@@ -665,7 +741,7 @@ while True:
                         break
                     if vyd <= 0:
                         print("Prohra")
-                        print(vyd())
+                        print(vyd)
                         kolo = 1
                         break
                     if vyd and nepritel <= 0:
@@ -682,7 +758,7 @@ while True:
                 print("2 = blok")
                 akce = input("vyber akci: ")
                 if akce == "1":
-                    pos = random.randrange(sil - 30, sil)
+                    pos = random.randrange(sil - 10, sil)
                     dmg = random.randrange(ed, med)
                     print(prehled)
                     print("Moje puvodni vydrz: ""(", vyd, ")")
@@ -719,7 +795,7 @@ while True:
                         kolo = 1
                         break
                 elif akce == "2":
-                    pos = random.randrange(sil - 30, sil)
+                    pos = random.randrange(sil - 10, sil)
                     dmg = random.randrange(ed, med)
                     blok = random.randrange(1, 2)
                     if blok == 1:
@@ -754,7 +830,7 @@ while True:
                         break
                     if vyd <= 0:
                         print("Prohra")
-                        print(vyd())
+                        print(vyd)
                         kolo = 1
                         break
                     if vyd and nepritel <= 0:
@@ -767,6 +843,7 @@ while True:
             nepritel = random.randrange(ehp, mehp)
             while True:
                 if doba == 0:
+                    S = 0
                     print("Kolo", kolo)
                     print("1 = Utok")
                     print("2 = blok")
@@ -794,7 +871,7 @@ while True:
                         print(prehled)
                         kolo = kolo + 1
                         doba = doba + 1
-                        S = 0
+                        S = 2
                         if doba == 4:
                             doba = 0
                         if nepritel <= 0:
@@ -870,8 +947,6 @@ while True:
                         print("Enemy dmg: ""(", dmg, ")")
                         print(prehled)
                         kolo = kolo + 1
-                        if doba == 4:
-                            doba = 0
                         if nepritel <= 0:
                             print("GG")
                             print(nepritel)
@@ -890,42 +965,119 @@ while True:
                             break
 
                 elif akce == "2":
-                    pos = random.randrange(sil - 30, sil)
-                    blok = random.randrange(1, 2)
-                    if blok == 1:
-                        procento = 30
-                    if blok == 2:
-                        procento = 50
-                    print(prehled)
-                    print("*** Moje vydrz: ""(", vyd, ")")
-                    print(prehled)
-                    print("Muj dmg: ""(", dmg / 100 * 40, ")")
-                    print(prehled)
-                    print("Enemy puvodni vydrz: ""(", nepritel, ")")
-                    nepritel = nepritel - pos / 100 * 40
-                    print(prehled)
-                    print("*** Enemy vydrz: ""(", nepritel, ")")
-                    print(prehled)
-                    kolo = kolo + 1
-                    doba = doba + 1
-                    if doba == 4:
-                        doba = 0
-                    if nepritel <= 0:
-                        print("GG")
-                        print(nepritel)
-                        bod = bod + 1
-                        kolo = 1
-                        break
-                    if vyd <= 0:
-                        print("Prohra")
-                        print(vyd())
-                        kolo = 1
-                        break
-                    if vyd and nepritel <= 0:
-                        print("Remíza")
-                        bod = 0
-                        kolo = 1
-                        break
+                    if S == 1:
+                        pos = random.randrange(sil - 30, sil)
+                        blok = random.randrange(1, 2)
+                        if blok == 1:
+                            procento = 30
+                        if blok == 2:
+                            procento = 50
+                        print(prehled)
+                        print("*** Moje vydrz: ""(", vyd, ")")
+                        print(prehled)
+                        print("Muj dmg: ""(", dmg / 100 * 40, ")")
+                        print(prehled)
+                        print("Enemy puvodni vydrz: ""(", nepritel, ")")
+                        nepritel = nepritel - pos / 100 * 40
+                        print(prehled)
+                        print("*** Enemy vydrz: ""(", nepritel, ")")
+                        print(prehled)
+                        S = 2
+                        kolo = kolo + 1
+                        doba = doba + 1
+                        if doba == 4:
+                            doba = 0
+                        if nepritel <= 0:
+                            print("GG")
+                            print(nepritel)
+                            bod = bod + 1
+                            kolo = 1
+                            break
+                        if vyd <= 0:
+                            print("Prohra")
+                            print(vyd)
+                            kolo = 1
+                            break
+                        if vyd and nepritel <= 0:
+                            print("Remíza")
+                            bod = 0
+                            kolo = 1
+                            break
+                    elif S == 2:
+                        pos = random.randrange(sil - 30, sil)
+                        blok = random.randrange(1, 2)
+                        dmg = random.randrange(ed, med)
+                        if blok == 1:
+                            procento = 30
+                        if blok == 2:
+                            procento = 50
+                        print(prehled)
+                        print("*** Moje vydrz: ""(", vyd, ")")
+                        print(prehled)
+                        vyd = vyd - dmg
+                        print("Muj dmg: ""(", dmg / 100 * 40, ")")
+                        print(prehled)
+                        print("Enemy puvodni vydrz: ""(", nepritel, ")")
+                        nepritel = nepritel - pos / 100 * 40
+                        print(prehled)
+                        print("*** Enemy vydrz: ""(", nepritel, ")")
+                        print(prehled)
+                        kolo = kolo + 1
+                        doba = doba + 1
+                        if doba == 4:
+                            doba = 0
+                        if nepritel <= 0:
+                            print("GG")
+                            print(nepritel)
+                            bod = bod + 1
+                            kolo = 1
+                            break
+                        if vyd <= 0:
+                            print("Prohra")
+                            print(vyd)
+                            kolo = 1
+                            break
+                        if vyd and nepritel <= 0:
+                            print("Remíza")
+                            bod = 0
+                            kolo = 1
+                            break
+                    else:
+                        pos = random.randrange(sil - 30, sil)
+                        blok = random.randrange(1, 2)
+                        dmg = random.randrange(ed, med)
+                        if blok == 1:
+                            procento = 30
+                        if blok == 2:
+                            procento = 50
+                        print(prehled)
+                        print("*** Moje vydrz: ""(", vyd, ")")
+                        vyd = vyd - dmg
+                        print(prehled)
+                        print("Muj dmg: ""(", dmg / 100 * 40, ")")
+                        print(prehled)
+                        print("Enemy puvodni vydrz: ""(", nepritel, ")")
+                        nepritel = nepritel - pos / 100 * 40
+                        print(prehled)
+                        print("*** Enemy vydrz: ""(", nepritel, ")")
+                        print(prehled)
+                        kolo = kolo + 1
+                        if nepritel <= 0:
+                            print("GG")
+                            print(nepritel)
+                            bod = bod + 1
+                            kolo = 1
+                            break
+                        if vyd <= 0:
+                            print("Prohra")
+                            print(vyd)
+                            kolo = 1
+                            break
+                        if vyd and nepritel <= 0:
+                            print("Remíza")
+                            bod = 0
+                            kolo = 1
+                            break
                 elif akce == "3":
                     doba = 0
                     trefa = random.randrange(1, 10)
@@ -946,7 +1098,7 @@ while True:
                             break
                         if vyd <= 0:
                             print("Prohra")
-                            print(vyd())
+                            print(vyd)
                             kolo = 1
                             break
                         if vyd and nepritel <= 0:
@@ -957,6 +1109,7 @@ while True:
         else:
             print("Konec")
             break
+
 
     else:
         print("Konec")
