@@ -4,9 +4,3 @@ netušim jak jej naprogramovat. 2. Hry které už jsem dělal např. Oko bere. T
 Pro co jsem se rozhodl? Pro tahové RPG (Tahové RPG je RPG kde se ztřídají vaše postavy a nepřatelské postavy v cyklech a provádějí akce podle svích vlastních rozhodnutí), proč? Protože jsem si řekl
 že mé znalosti budou na to to ztačit nevyžadujete obraz a dáse hra zvíraznit dobře prez terminál navíc už jsem měl v hlavě takový plán jak začít jak by to mohlo asi vypadat ve zkratce jsem si 
 představil spostu rozhodování neboli IF a i nekonečnou smyčku While True tyhle dvě veci jsou velmy potřebné a z využití random range které bude hodně užitečné jsem se finalně rozhodl pro tahové RPG.
-
-Obsah programu
-Program bude obsahovat spustu While True mechanik a IFů společně take bylo zapotřebí funkce random kterou jsem importoval z knihovny random umožnuje mi pak v programu vybírat náhodné čisla 
-od čísla1 až po číslo2 stane se podstatnou mechanikou programu pro výpočty poškození obou stran hry
-Program je jinak počítání mezi číslicemi který se neustále mění každé kolo odečítajíse pak se některé i zvěčujou pokud hráč vyhraje.
-Ze začatku hráč ne měl ani možnost se rozhodovat nad svímy akcemi pak jsem mu tu akcí o které víc napíšu u programu jako celku umožnil dělat.
