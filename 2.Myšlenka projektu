@@ -4,3 +4,4 @@ netušim jak jej naprogramovat. 2. Hry které už jsem dělal např. Oko bere. T
 Pro co jsem se rozhodl? Pro tahové RPG (Tahové RPG je RPG kde se ztřídají vaše postavy a nepřatelské postavy v cyklech a provádějí akce podle svích vlastních rozhodnutí), proč? Protože jsem si řekl
 že mé znalosti budou na to to ztačit nevyžadujete obraz a dáse hra zvíraznit dobře prez terminál navíc už jsem měl v hlavě takový plán jak začít jak by to mohlo asi vypadat ve zkratce jsem si 
 představil spostu rozhodování neboli IF a i nekonečnou smyčku While True tyhle dvě veci jsou velmy potřebné a z využití random range které bude hodně užitečné jsem se finalně rozhodl pro tahové RPG.
+hry ze kterých jsem si vzal příklad jsou (Darkest Dungeon , Raid Shadow Legends)
